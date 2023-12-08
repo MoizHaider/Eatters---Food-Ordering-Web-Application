@@ -1,0 +1,23 @@
+.container{
+    background-color: #171e24;
+    width: 50%;
+    border-radius: 5px;
+
+}
+.container>*{
+    color: #e3eaf0;
+}
+.locBtn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+}
+.locIcon{
+    width: 30px;
+    height: 30px;
+}
+.locItems{
+    display: flex;
+    justify-content: ;
+}

@@ -1,0 +1,31 @@
+.container{
+    background-color: #171e24;
+    width: 30%;
+    border-radius: 5px;
+
+}
+.container>*{
+    color: #e3eaf0;
+    padding: 5px;
+}
+.locBtn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+}
+.locIcon{
+    width: 30px;
+    height: 30px;
+    transform: translateX(-10px);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.locIcon:hover{
+    width: 35px;
+    height: 35px;
+    
+}
+.locItems{
+    display: flex;
+    justify-content: space-between;
+}

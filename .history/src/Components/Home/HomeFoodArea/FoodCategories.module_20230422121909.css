@@ -1,0 +1,23 @@
+.parent{
+    width: 20em;
+    height: 25em;
+    background-color: #171e24;
+    padding: 15px 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.411);
+}
+.buttonsParent{
+    margin-top: 5px;
+}
+.parent > h2{
+    color: #e3eaf0;
+    margin: 5px;
+}
+.buttonsParent>*{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.411);
+    border-radius: 15px;
+    padding: 5px;
+    margin: 2px 5px;
+}
+.buttonsParent>*:hover{
+    color: orange;
+}

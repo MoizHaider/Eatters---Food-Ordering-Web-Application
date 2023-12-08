@@ -1,0 +1,24 @@
+.nav{
+    background-color: #151a20;
+}
+
+.navItems{
+    display: flex;
+    justify-content: flex-end;
+    border: 3px solid red;
+    gap: 5%;
+}
+
+.navSections{
+    display:  flex;
+    justify-content:flex-end;
+    gap: 5%;
+    border: 3px solid red;
+    padding: 10px;
+}
+.navSections>*{
+    color: #e3eaf0;
+    list-style: none;
+    text
+    
+}

@@ -1,0 +1,17 @@
+.foodItemWrapper{
+    background-color: aqua;
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    box
+}
+
+
+.priceRatingContainer{
+    display: flex;
+    justify-content: space-around;
+}
+.imageContainer, .buttonContainer{
+    display: flex;
+    justify-content: center;
+}

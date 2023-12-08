@@ -1,0 +1,29 @@
+.nav{
+    background-color: #151a20;
+}
+
+.navItems{
+    display: flex;
+    justify-content: flex-end;
+    gap: 3%;
+    align-items: center;
+}
+.notificationIcon{
+    width: 60%;
+    height: 70%;
+}
+.navSections{
+    display:  flex;
+    justify-content:flex-end;
+    gap: 5%;
+    padding: 10px;
+}
+.navSectionsContainer{
+    width: 70%;
+}
+.navSections>*{
+    color: #e3eaf0;
+    list-style: none;
+    text-decoration: none;
+    
+}

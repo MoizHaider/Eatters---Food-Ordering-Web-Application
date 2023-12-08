@@ -1,0 +1,25 @@
+.searchModel{
+    color: red;
+}
+.searchBar{
+    width: 400px;
+    height: 25%;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.623);
+}
+.parent{
+    margin-top: 3%;
+    margin-right: 4%;
+}
+.labelAndSearchParent{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+.searchLabel{
+    position: absolute;
+    color: #e3eaf0;
+    border: 3px solid red;
+    left: 60%;
+}
