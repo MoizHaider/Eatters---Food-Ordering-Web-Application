@@ -36,8 +36,8 @@ REACT_APP_FIREBASE_SENDER_ID= "Your messagingSenderId"
 REACT_APP_FIREBASE_APP_ID= "Your appId"
 REACT_APP_MAPBOX_ACCESS_TOKKEN = "Your mapbox access tokken"
 ```
-##Usage
-Start the application.
+## Usage
+Start the application using.
 ```npm start```
 The application will start on localhost:3000 by default.
 
