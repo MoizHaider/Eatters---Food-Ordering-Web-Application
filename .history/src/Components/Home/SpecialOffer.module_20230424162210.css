@@ -1,0 +1,16 @@
+.bannersContainer>*{
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.63);
+}
+.container{
+    display: flex;
+    gap: 10%;
+}
+.container>*{
+   border: none;
+   background: none;
+   cursor: pointer;
+}
+.container:first-child{
+    border: 30px solid red;
+}

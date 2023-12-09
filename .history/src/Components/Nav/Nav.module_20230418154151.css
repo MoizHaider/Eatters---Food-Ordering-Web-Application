@@ -1,0 +1,14 @@
+.nav{
+    background-color: #151a20;
+}
+
+.navItems{
+    display: flex;
+    jus
+}
+
+.navSections{
+    display:  flex;
+    justify-content:flex-end;
+    gap: 5%;
+}

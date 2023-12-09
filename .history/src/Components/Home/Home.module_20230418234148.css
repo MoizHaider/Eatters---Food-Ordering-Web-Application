@@ -1,0 +1,7 @@
+.profile{
+    margin: 1% 1%;
+}
+.searchPlusProfile{
+    display: flex;
+    justify-content: space-around;
+}

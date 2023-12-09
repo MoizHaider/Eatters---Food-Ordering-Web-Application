@@ -1,0 +1,48 @@
+import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { login } from "../Store/ProfileSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { loginStatus } from "../Store/ProfileSlice";
+import { useNavigate } from "react-router-dom";
+
+function LogIn() {
+  const navigate = useNavigate();
+  const loggedStatus = useSelector(loginStatus);
+  console.log(loggedStatus);
+  const dispatch = useDispatch();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  function formSubmitHandler(event) {
+    event.preventDefault();
+    dispatch(
+      login({
+        email: emailRef.current.value,
+        password: passwordRef.current.value,
+      })
+    );
+    emailRef.current.value = "";
+    passwordRef.current.value = "";
+  }
+  useEffect(() => {
+    if (loggedStatus === true) {
+      navigate("/home");
+    }
+    console.log("Inside useEffect");
+  }, [loggedStatus]);
+  console.log("outside useEffect")
+  return (
+    <div>
+      <form onSubmit={formSubmitHandler}>
+        <label>Email</label>
+        <input type="email" ref={emailRef} />
+        <label>Possword</label>
+        <input type="password" ref={passwordRef} />
+        <button>LogIn</button>
+      </form>
+      <p>Do't have an account </p>
+      <Link to="/">SingUp</Link>
+    </div>
+  );
+}
+export default LogIn;

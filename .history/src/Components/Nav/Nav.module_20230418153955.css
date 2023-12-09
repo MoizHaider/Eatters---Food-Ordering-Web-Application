@@ -1,0 +1,8 @@
+.nav{
+    background-color: #151a20;
+}
+
+.navSections{
+    display:  flex;
+    justify-content: space-around;
+}

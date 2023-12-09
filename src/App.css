@@ -1,0 +1,9 @@
+.allThings{
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    align-items: center;
+    background-color: rgb(209, 94, 94);
+    gap: 15px;
+    
+}

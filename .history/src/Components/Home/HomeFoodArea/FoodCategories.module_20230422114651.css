@@ -1,0 +1,14 @@
+.parent{
+    padding: 15px 10px;
+    width: 20em;
+    height: 25em;
+    background-color: #171e24;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.411);
+    display: flexbox;
+    gap: 10px;
+}
+.parent>*{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.411);
+    border-radius: 15px;
+    padding: 5px;
+}

@@ -1,0 +1,17 @@
+.nav{
+    background-color: #151a20;
+}
+
+.navItems{
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid red;
+}
+
+.navSections{
+    display:  flex;
+    justify-content:flex-end;
+    gap: 5%;
+    border: 3px solid red;
+    width: 100
+}

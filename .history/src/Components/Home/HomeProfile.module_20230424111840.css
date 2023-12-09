@@ -1,0 +1,31 @@
+.container{
+    background-color: #171e24;
+    width: 120%;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.411);
+}
+
+.container>*{
+    color: #e3eaf0;
+    padding: 15px 30px;
+}
+.locBtn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+}
+.locIcon{
+    width: 25px;
+    height: 25px;
+    transition-duration: 0.2s;
+}
+.locIcon:hover{
+    width: 32px;
+    height: 32px;
+    pos
+}
+.locItems{
+    display: flex;
+    gap: 5%;
+}
