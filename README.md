@@ -2,14 +2,9 @@
 
 ## Description
 
-This is a Food Ordering web application built with React.js and Firebase. The application allows users to browse through a variety of food items and place orders seamlessly.
+This is a Front-end Food Ordering web application built with React.js and Firebase(Authentication). The application allows users to browse through a variety of food items and place orders seamlessly.
 
-## Ramaining Features
-* Pages Styling
-* Chat Functionality
-* Checkout Functionality
-* Storing Orders in Database
-* Admin Functionality
+
 
 ## Installation
 
