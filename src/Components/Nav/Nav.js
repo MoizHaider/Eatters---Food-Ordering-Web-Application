@@ -1,100 +1,41 @@
-import Home from "../Home/Home";
-import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
-import Notification from "../../Assets/NotificationIcon.png";
-import LogIn from "../../Authentication/LogIn";
-import { useEffect, useState } from "react";
 import React from "react";
-import SingUp from "../../Authentication/SingUp";
-import AllOrders from "../Orders/AllOrders";
-import Map from "../Trace Order/Map";
-import ProtectedRoute from "../../Authentication/ProtectedRoute";
-import Profile from "../Profile/Profile";
-import { isLoggedIn, loginStatus } from "../../Store/ProfileSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "firebase/auth";
 import { auth } from "../../Authentication/firebase";
-import { onAuthStateChanged } from "firebase/auth";
-import { Outlet } from "react-router";
-import Checkout from "../Orders/Checkout";
-import classes from "./Nav.module.css"
+import { LogOut } from "../../Store/ProfileSlice";
+import Notification from "../../Assets/NotificationIcon.png";
 
 function Nav() {
-  // let logStatus = useSelector(loginStatus);
-  // let dispatch = useDispatch();
-  let [searchModel, setSearchModel] = useState(false);
-  let [loggedIn, setLoggedIn] = useState(false);
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (change) => {
-      const user = auth.currentUser;
-      if (user != null) console.log(user);
-      console.log(
-        `Created User Time Dif 
-          ${
-            new Date(user.metadata.creationTime).getTime() -
-            new Date().getTime()
-          }`
-      );
-
-      if (
-        user != null &&
-        new Date().getTime() - new Date(user.metadata.creationTime).getTime() >
-          1
-      ) {
-        setLoggedIn(true);
-      } else {
-        setLoggedIn(false);
-      }
-    });
-  }, [loggedIn]);
-
-  function onSearchClickHandler() {
-    setSearchModel(true);
-  }
-  function searchBackBtnClickHandler() {
-    setSearchModel(false);
+  const dispatch = useDispatch();
+  function onLogoutClickHandler() {
+    signOut(auth);
+    dispatch(LogOut());
   }
 
   return (
-    <div className = {classes.nav}>
-      <div className = {classes.navItems}>
-        <nav className= {classes.navSectionsContainer}>
-          <ul className= {classes.navSections}>
-            <Link to="/home">Home</Link>
-            <Link to="/messeges">Messeges</Link>
-            <Link to="/orders">Orders</Link>
+    <div className="">
+      <div className="w-full bg-white sticky top-0 shadow-xl flex items-center overflow-hidden z-40 ">
+        <nav className="w-full flex h-[70px]  overflow-hidden items-center justify-between  px-4 md:px-8 text-sm md:text-md lg:text-lg">
+          <div className="hidden xs:block w-[80px] h-[80px] translate-x-[-10px] lg:w-[100px] lg:h-[100px]">
+            <img src={"./images/logo.png"} className=" w-full object-cover" />
+          </div>
+
+          <ul className="flex gap-x-4 items-center">
+            <Link to="/">Home</Link>
+            <Link to="/orders">Cart</Link>
             <Link to="/profile">Profile</Link>
-            <Link to="/traceOrders">Trace Order</Link>
+            <Link to="notifications">
+              <img
+                src={Notification}
+                alt="Notify"
+                className="w-[25px] h-[25px] lg:w-[30px] lg:h-[30px]"
+              />
+            </Link>
+            <button className="border-2 border-red-500 bg-red-500 bg-opacity-50 text-white rounded-full px-3 py-1 text-center" onClick={onLogoutClickHandler}>Log out</button>
           </ul>
         </nav>
-        <Link to="notifications">
-          <img src={Notification} alt="Notify" className = {classes.notificationIcon} />
-        </Link>
       </div>
-
-      <Routes>
-        <Route path="/" element={<SingUp></SingUp>} />
-        <Route path="/login" element={<LogIn></LogIn>} />
-        <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
-          <Route
-            path="/home"
-            element={
-              <Home
-                searchModel={searchModel}
-                onSearchClickHandler={onSearchClickHandler}
-                searchBackBtnClickHandler={searchBackBtnClickHandler}
-              ></Home>
-            }
-          />
-          <Route path="/orders/*" element={<AllOrders></AllOrders>}>//try to make some logic to remove the start and still get the same functionality
-            <Route path="checkout" element = {<Checkout/>}>
-            </Route>
-          </Route>
-
-          <Route path="/traceOrders" element={<Map />} />
-          <Route path = "/checkoutMap" element={<Map/>}/>
-          <Route path="/profile" element={<Profile />}></Route>
-        </Route>
-      </Routes>
     </div>
   );
 }

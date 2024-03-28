@@ -11,7 +11,7 @@ export default function ProtectedRoute(props) {
 
   onAuthStateChanged(auth, (user) => {
     if (!user) {
-      navigate("/login", { replace: true });
+      navigate("/auth", { replace: true });
     }
   });
 
