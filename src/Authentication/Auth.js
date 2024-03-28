@@ -105,6 +105,7 @@ export default function Auth() {
           signupRef={signupRef}
           renderLogin={renderLogin}
           swapComponent={swapComponent}
+          setRenderLogin = {setRenderLogin}
         />
       </span>
     </div>
