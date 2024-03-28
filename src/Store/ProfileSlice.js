@@ -18,6 +18,7 @@ export const singup = createAsyncThunk(
 
 export const login = createAsyncThunk("login", async ({ email, password }) => {
   const singIn = await signInWithEmailAndPassword(auth, email, password);
+
   console.log(singIn.user);
   //return singIn.user;
 });
