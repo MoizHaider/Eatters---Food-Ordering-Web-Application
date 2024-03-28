@@ -15,6 +15,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { setProfileData } from "./Store/ProfileSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 function App() {
   let [loggedIn, setLoggedIn] = useState(false);
   const location = useLocation();
@@ -41,6 +42,7 @@ function App() {
   return (
     <>
       {loggedIn === true && pathname != "/auth" ? <Nav /> : null}
+      <SpeedInsights/>
       <Routes>
         <Route path="/auth" element={<Auth></Auth>} />
 
