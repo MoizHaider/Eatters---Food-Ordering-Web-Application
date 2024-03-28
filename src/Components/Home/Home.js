@@ -1,48 +1,25 @@
-import HomeProfile from "./HomeProfile";
-import Search from "./Search";
+import HomeTop from "./HomeTop";
 import SpecialOffer from "./SpecialOffer";
 import FoodCategories from "./HomeFoodArea/FoodCategories";
 import AllFoodItems from "./HomeFoodArea/AllFoodItems";
 import { useParams } from "react-router";
-import classes from "./Home.module.css";
-import { createPortal } from "react-dom";
+import { useState } from "react";
+
 function Home(props) {
-  let content;
-  const params = useParams();
-  console.log(params);
-
-  if (props.searchModel === false) {
-    content = (
-      <div>
-        <div className={classes.searchPlusProfile}>
-          <div>
-            <HomeProfile className={classes.profile} />
-            <SpecialOffer />
-          </div>
-
-          <div>
-            <Search
-              showModel={props.searchModel}
-              backBtnHandler={props.searchBackBtnClickHandler}
-              inputClickHandler={props.onSearchClickHandler}
-              className={classes.search}
-            />
-            <FoodCategories></FoodCategories>
-          </div>
-        </div>
-
-        <AllFoodItems />
+  const [category, setCategory] = useState("all");
+  return (
+    <div className="">
+      <HomeTop />
+      <div className="px-4 md:px-8">
+        <SpecialOffer />
+        <FoodCategories
+          category={category}
+          setCategory={setCategory}
+        ></FoodCategories>
       </div>
-    );
-  } else
-    content = (
-      <Search
-        showModel={props.searchModel}
-        backBtnHandler={props.searchBackBtnClickHandler}
-        inputClickHandler={props.onSearchClickHandler}
-      />
-    );
-  return createPortal(content, document.getElementById("searchModel-root"));
+      <AllFoodItems category={category} />
+    </div>
+  );
 }
 
 export default Home;

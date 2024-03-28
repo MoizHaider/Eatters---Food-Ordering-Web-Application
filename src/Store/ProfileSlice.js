@@ -45,6 +45,10 @@ const userSlice = createSlice({
       state.longitude = 0;
       state.latitude = 0;
       state.locationName = "";
+      state.email = "";
+    },
+    setProfileData(state, action) {
+      state.userData.email = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -77,4 +81,4 @@ export const userData = (state) => state.userData.userData;
 
 export const getCoordsAction = userSlice.getCoordinates;
 
-export const { LogOut } = userSlice.actions;
+export const { LogOut, setProfileData } = userSlice.actions;
