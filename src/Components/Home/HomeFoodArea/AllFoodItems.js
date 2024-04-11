@@ -7,8 +7,13 @@ import {
 } from "../../../Store/OrdersSlice";
 import Rating from "../../Rating";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
+import { useEffect, useState } from "react";
+
+
 
 function AllFoodItems({ category }) {
+
   let foodItems = useSelector((state) => state.foodReducer);
   let dispatch = useDispatch();
   let orderedFood = useSelector(orderedItems);
@@ -52,6 +57,7 @@ function AllFoodItems({ category }) {
           selectedCategory={category}
           category={data.category}
           desc={data.desc}
+        
         />
       ))}
     </div>
@@ -74,9 +80,8 @@ function FoodItem(props) {
       <div className="flex items-center justify-center  from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3]  px-2">
         <div className="w-full   max-w-[290px] xs:max-w-[320px] md:max-w-[350px] mx-auto bg-white rounded-3xl  overflow-hidden shadow-xl">
           <div className="max-w-md mx-auto">
-
             <LazyLoadImage
-              src={props.src}
+              src={`${props.src}`}
               className="h-[200px] w-full object-cover"
               style={{ backgroundSize: "cover", backgroundPosition: "center" }}
               width={600}
