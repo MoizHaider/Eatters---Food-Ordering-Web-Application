@@ -16,7 +16,7 @@ function Nav() {
   return (
     <div className="">
       <div className="w-full bg-white sticky top-0 shadow-xl flex items-center overflow-hidden z-40 ">
-        <nav className="w-full flex h-[70px]  overflow-hidden items-center justify-between  px-4 md:px-8 text-sm md:text-md lg:text-lg">
+        <nav className="w-full flex h-[70px]  overflow-hidden items-center justify-around sm:justify-between  px-4 md:px-8 text-sm md:text-md lg:text-lg">
           <div className="hidden xs:block w-[80px] h-[80px] translate-x-[-10px] lg:w-[100px] lg:h-[100px]">
             <img src={"./images/logo.png"} className=" w-full object-cover" />
           </div>

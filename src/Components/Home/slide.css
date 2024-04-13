@@ -65,7 +65,14 @@
     }
     
   }
-
+  @media only screen and (max-width: 1280px) { /* lg */
+    
+    .swiper-slide{
+      background-color: white;
+      max-height: 200px;
+     
+    }
+  }
   @media only screen and (max-width: 1024px) { /* md */
     .swiper{
       gap: 40px;
@@ -74,19 +81,31 @@
         --swiper-navigation-size: 16px;
         padding: 18px;
     }
-    .swiper-slide{
-      background-color: white;
-    }
+    
   }
 
   @media only screen and (max-width: 768px) {  /* sm */
     .swiper{
       gap: 35px;
     }
+    .swiper-slide {
+      /* Center slide text vertically */
+     
+     
+      max-height: 250px;
+      
+    }
    
   }
 
   @media only screen and (max-width: 640px) { /* xs */
+    .swiper-slide {
+      /* Center slide text vertically */
+     
+     
+      max-height: 200px;
+      
+    }
     
   }
 
@@ -96,13 +115,12 @@
       --swiper-navigation-size: 12px;
       padding: 14px;
     }
-    .swiper-slide{
-      background-color: rgb(172, 172, 172);
-    }
+   
     .swiper-slide {
       /* Center slide text vertically */
      
       border-radius: 0px;
+      max-height: 100px;
       
     }
    

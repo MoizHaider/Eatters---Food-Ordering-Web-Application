@@ -115,7 +115,7 @@ function HomeTop(props) {
           </div>
           <div className="overflow-hidden  object-contain w-[500px] h-[500px]">
             {" "}
-            <div className="lineholder overflow-hidden object-cover left-0 right-3 z-10 top-2 absolute">
+            <div className="lineholder overflow-hidden object-cover left-0 right-2 sm:right-3 z-10 top-2 absolute">
               <img
                 src="/images/midline.png"
                 alt="image"
