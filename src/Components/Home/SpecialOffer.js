@@ -70,7 +70,7 @@ function Card({name}){
   const img = require(`../../offers/${name}`)
   return (
     <div className="w-[100%] h-fit overflow-hidden">
-      <img src = {img} className = "w-full object-scale-down rounded-[30px] px-2 shadow-2xl"/>
+      <img src = {img} className = "w-full object-scale-down rounded-[30px] sm:px-2 shadow-2xl"/>
     </div>
   )
 }
