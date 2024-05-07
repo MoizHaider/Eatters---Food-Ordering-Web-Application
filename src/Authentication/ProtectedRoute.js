@@ -18,5 +18,5 @@ export default function ProtectedRoute(props) {
   if (props.loggedIn) {
     return <Outlet></Outlet>;
   }
-  return <div>Sorry you are Not Authentecated</div>;
+  return <div></div>;
 }
